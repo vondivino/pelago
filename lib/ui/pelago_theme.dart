@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class PelagoTheme {
-  final Color whiteColor = Color(0xffF3F2F7);
-  final Color blackColor = Color(0xffF333333);
-  final Color primaryColorDark = Color(0xff2E294E);
-  final Color primaryColorLight = Color(0xff5056CE);
-  final Color accentDarkColor = Color(0xffBB0E45);
-  final Color accentLightColor = Color(0xffD81F5A);
+  final Color whiteColor;
+  final Color blackColor;
+  final Color primaryColor;
+  final Color secondaryColor;
+  final Color scaffoldColor;
+  final Color greyColor;
 
-  TextStyle title() {
-    return GoogleFonts.getFont(
-      'Nunito',
-      color: this.blackColor,
-      fontWeight: FontWeight.bold,
-      fontSize: 36.0,
-    );
-  }
+  PelagoTheme({
+    required this.whiteColor,
+    required this.blackColor,
+    required this.primaryColor,
+    required this.secondaryColor,
+    required this.scaffoldColor,
+    required this.greyColor,
+  });
 }
+
+final theme = PelagoTheme(
+  whiteColor: Colors.white,
+  blackColor: Color(0xff333333),
+  primaryColor: Color(0xffBB0E45),
+  secondaryColor: Color(0xff2E294E),
+  scaffoldColor: Color(0xffEFEFEF),
+  greyColor: Color(0xff878787),
+);
