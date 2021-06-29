@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
 class NavBarItem {
-  final Icon icon;
+  final IconData icon;
   final String label;
   final Widget screen;
+  final IconData selectedIcon;
 
-  NavBarItem({required this.icon, required this.label, required this.screen});
+  NavBarItem({
+    required this.selectedIcon,
+    required this.icon,
+    required this.label,
+    required this.screen,
+  });
 }
