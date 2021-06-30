@@ -4,14 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 import '../exports.dart';
 
 class PelagoSmallListItem extends StatelessWidget {
-  final String title;
-  final String? subtitle;
-  final String image;
+  final Trip trip;
   const PelagoSmallListItem({
     Key? key,
-    required this.title,
-    this.subtitle,
-    required this.image,
+    required this.trip,
   }) : super(key: key);
 
   @override
@@ -24,11 +20,11 @@ class PelagoSmallListItem extends StatelessWidget {
         child: Container(
           height: 60.0,
           width: 60.0,
-          child: Image.network(image, fit: BoxFit.cover),
+          child: Image.network(trip.image, fit: BoxFit.cover),
         ),
       ),
       title: Text(
-        title,
+        trip.title,
         style: GoogleFonts.getFont(
           'Nunito',
           fontSize: 18.0,
@@ -36,20 +32,9 @@ class PelagoSmallListItem extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
       ),
-      subtitle: subtitle != null
-          ? Text(
-              subtitle!,
-              style: GoogleFonts.getFont(
-                'Nunito',
-                color: theme.greyColor,
-                fontSize: 14.0,
-                fontWeight: FontWeight.w500,
-              ),
-            )
-          : null,
       trailing: IconButton(
-        onPressed: () => Navigator.push(
-            context, MaterialPageRoute(builder: (_) => ExploreResultScreen(category: 'sadf'))),
+        onPressed: () =>
+            Navigator.push(context, MaterialPageRoute(builder: (_) => TripDetailScreen(trip: trip))),
         icon: Icon(FontAwesomeIcons.arrowRight),
         color: theme.blackColor,
       ),

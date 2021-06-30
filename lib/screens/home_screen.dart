@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../exports.dart';
 
+final api = PelagoApi();
+
 // TODO: Refactor bottom navbar
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,6 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final listener = Provider.of<HomeScreenProvider>(context);
+    final watcher = Provider.of<DataProvider>(context, listen: false);
+    
     return SafeArea(
       top: false,
       child: Scaffold(

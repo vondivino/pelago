@@ -6,6 +6,8 @@ void main() => runApp(MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => HomeScreenProvider()),
           ChangeNotifierProvider(create: (_) => ExploreScreenProvider()),
+          ChangeNotifierProvider(create: (_) => DataProvider()),
+          ChangeNotifierProvider(create: (_) => Database()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

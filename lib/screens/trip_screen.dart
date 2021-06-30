@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../exports.dart';
 
@@ -12,6 +13,7 @@ class TripScreen extends StatefulWidget {
 class _TripScreenState extends State<TripScreen> {
   @override
   Widget build(BuildContext context) {
+    final trips = Provider.of<Database>(context).trips;
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -20,10 +22,7 @@ class _TripScreenState extends State<TripScreen> {
           SizedBox(height: 10.0),
           Expanded(
             child: ListView.separated(
-              itemBuilder: (context, i) => PelagoSmallListItem(
-                title: trips[i].title,
-                image: trips[i].image,
-              ),
+              itemBuilder: (context, i) => PelagoSmallListItem(trip: trips[i]),
               separatorBuilder: (context, i) => Opacity(
                 opacity: 0.0,
                 child: SizedBox(height: 10.0),
