@@ -1,3 +1,3 @@
-# Pelago
+# PelagoSwipe
 
-A Singapore Airlines AppChallenge Solution for Pelago
+A cross-platform application for Pelago travellers to plan your next trip quickly.
